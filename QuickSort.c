@@ -6,47 +6,49 @@ void swap(int *a, int *b) {
   *b = t;
 }
 
-int partition(int array[], int low, int high) {
-  int pivot = array[high];
-  int i = (low - 1);
-
-  for (int j = low; j < high; j++) { //{8, 7, 2, 1, 0, 9, 6};
-  if (array[j] <= pivot) {
-    i++;
-    swap(&array[i], &array[j]);
+int partition(int arr[], int lb, int ub) {
+  int pivot = arr[lb];
+  int start = lb;
+  int end = ub;
+  while(start<end){
+    while(arr[start] <= pivot){
+    start++;
   }
+  while(arr[end]>pivot){
+    end--;
   }
-
-  swap(&array[i + 1], &array[high]);
-  return (i + 1);
+  if(start<end){
+    swap(&arr[start],&arr[end]);
+  }
+  swap(&arr[lb], &arr[end]);
+  return end;
+  }
 }
+  
 
-void quickSort(int array[], int low, int high) {
-  if (low < high) {
+void quickSort(int arr[], int lb, int ub) {
+  if (lb < ub) {
 
-  int pi = partition(array, low, high);
+  int pi = partition(arr, lb, ub);
   
   // Sort the elements on the left of pivot
-  quickSort(array, low, pi - 1);
-  
-  // Sort the elements on the right of pivot
-  quickSort(array, pi + 1, high);
+  quickSort(arr, lb, pi - 1);
+  quickSort(arr, pi + 1, ub);
   }
 }
 
 // Function to print eklements of an array
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; ++i) {
-  printf("%d  ", array[i]);
+void printArray(int arr[], int n) {
+  for (int i = 0; i < n; ++i) {
+  printf("%d  ", arr[i]);
   }
   printf("\n");
 }
 
-// Driver code
 int main() {
-  int data[] = {8, 7, 2, 1, 0, 9, 6};
-  int n = sizeof(data) / sizeof(data[0]);
-  quickSort(data, 0, n - 1);
+  int arr[] = {8, 7, 2, 1, 0, 9, 6};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  quickSort(arr, 0, n - 1);
   printf("Sorted array in ascending order: \n");
-  printArray(data, n);
+  printArray(arr, n);
 }
