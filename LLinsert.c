@@ -37,7 +37,7 @@ void Insert(struct Node *p,int index,int x)
  struct Node *t;
  int i;
 
- if(index < 0 || index > _countof(p))
+ if(index < 0 )
  return;
  t=(struct Node *)malloc(sizeof(struct Node));
  t->data=x;
@@ -65,7 +65,7 @@ int main()
  create(A,5);
 
 
- Insert(first,1,5);
+ Insert(first,1,50000);
  Display(first);
  return 0;
 }

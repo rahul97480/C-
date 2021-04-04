@@ -24,7 +24,7 @@ void create(int A[],int n)
  last=t;
  }
 }
-struct Node * LSearch(struct Node *p,int key)
+struct Node * LSearch(struct Node *p,int key) // Transposition bring the search element in beginning
 {
  struct Node *q;
 
