@@ -1,7 +1,4 @@
 #include<stdio.h>
-
-
-
 void mergeSort(int arr[], int lb, int mid, int ub){
     int i = lb;
     int j = mid+1;
