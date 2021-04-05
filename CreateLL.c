@@ -64,6 +64,35 @@ void Insert(struct Node *p,int index,int x)
  }
 }
 
+int Delete(struct Node *p,int index)
+{
+ struct Node *q=NULL;
+ int x=-1,i;
+
+ if(index < 1 || index > getCount(p))
+ return -1;
+ if(index==1)
+ {
+ q=first;
+ x=first->data;
+ first=first->next;
+ free(q);
+ return x;
+ }
+ else
+ {
+ for(i=0;i<index-1;i++)
+ {
+ q=p;
+ p=p->next;
+ }
+ q->next=p->next;
+ x=p->data;
+ free(p);
+ return x;
+
+ }
+}
 
 
 
@@ -80,10 +109,12 @@ int main(){
     struct Node temp;
     int A[]={3,5,7,10,25,8,32,2};
     create(A,8);
-    Display(first);
+    //Display(first);
     Insert(first,4,50000);
     //debug(first);
-    printf("After Insertion");
+    //printf("After Insertion");
+    //Display(first);
+    Delete(first,3);
     Display(first);
     //printf("%d",getCount(first));
 }

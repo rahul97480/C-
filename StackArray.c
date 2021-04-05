@@ -4,6 +4,7 @@
 void push(int);
 void pop();
 void display();
+void peek();
 
 int stack[SIZE], top = -1;
 
@@ -12,7 +13,7 @@ void main()
    int value, choice;
    while(1){
       printf("\n\n***** MENU *****\n");
-      printf("1. Push\n2. Pop\n3. Display\n4. Exit");
+      printf("1. Push\n2. Pop\n3. Display\n4. Peek \n5. Exit");
       printf("\nEnter your choice: ");
       scanf("%d",&choice);
       switch(choice){
@@ -23,6 +24,8 @@ void main()
 	 case 2: pop();
 		 break;
 	 case 3: display();
+		 break;
+    case 4: peek();
 		 break;
 	 default: printf("\nWrong selection!!! Try again!!!");
       }
@@ -53,5 +56,12 @@ void display(){
       printf("\nStack elements are:\n");
       for(i=top; i>=0; i--)
 	 printf("%d\n",stack[i]);
+   }
+}
+void peek(){
+   if(top == -1)
+      printf("\nStack is Empty!!!");
+   else{
+      printf(" The Top most Element is %d",stack[top]);
    }
 }
