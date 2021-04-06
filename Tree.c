@@ -121,7 +121,7 @@ int main()
  Treecreate();
  Preorder(root);
  printf("\nPost Order ");
- Postorder(root);
+ Inorder(root);
 
  return 0;
 }
