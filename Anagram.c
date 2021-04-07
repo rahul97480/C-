@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main (void) {
+int main () {
    char s1[] = "recitals";
    char s2[] = "articles";
 
