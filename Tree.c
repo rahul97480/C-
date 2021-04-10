@@ -125,3 +125,6 @@ int main()
 
  return 0;
 }
+
+
+//select min(value) from table_1 where not in (select min(value) from table_1)

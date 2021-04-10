@@ -3,6 +3,8 @@
     "files.associations": {
         "type_traits": "c",
         "cstdlib": "c",
-        "limits": "c"
+        "limits": "c",
+        "stdio.h": "c",
+        "string.h": "c"
     }
 }
