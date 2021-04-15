@@ -15,7 +15,7 @@ int main () {
       printf("%s and %s are not anagrams! \n", s1, s2);
       return 0;
    }
-
+//Bubble Sort Algo
    for (i = 0; i < n-1; i++) {
       for (j = i+1; j < n; j++) {
          if (s1[i] > s1[j]) {
@@ -30,7 +30,7 @@ int main () {
          }
       }
    }
-
+//Comparison of each ele 
    for(i = 0; i<n; i++) {
       if(s1[i] != s2[i]) {    
          printf("Strings are not anagrams! \n", s1, s2);

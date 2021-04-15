@@ -8,6 +8,15 @@
         "string.h": "c",
         "stdlib.h": "c",
         "cmath": "c",
-        "complex": "c"
+        "complex": "c",
+        "chrono": "c",
+        "random": "c",
+        "valarray": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "regex": "c",
+        "utility": "c"
     }
 }
