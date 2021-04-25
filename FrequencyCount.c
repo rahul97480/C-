@@ -9,14 +9,13 @@ char helper(char *s){
     char  *result = "";
     for(int i=0;i<26;i++){
     if(arr[i]>0) 
-    {
-    char ch = 97+i; 
-    result+=ch;
-    result+=(arr[i]);
+{
+        char ch = 97+i; 
+        result+=ch;
+        result+=(arr[i]);
+        }
     }
-
-    }
-    printf("%d",result);
+    printf("%d",*result);
 }
 
 int main() {

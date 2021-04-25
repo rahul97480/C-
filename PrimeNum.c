@@ -6,7 +6,7 @@ int main()
    for(i=num1+1; i<num2; ++i)
    {
       flag_var=0;
-      for(j=2; j*j<=i; ++j) //21  => 21/2 =10
+      for(j=2; j*j<=i; ++j) //36- 2 3 4 6 9 18 36
       {
          if(i%j==0)
          {
