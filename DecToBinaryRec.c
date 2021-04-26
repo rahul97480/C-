@@ -7,7 +7,6 @@ int find(int decimal_number)
         return (decimal_number % 2 + 10 * find(decimal_number / 2));
 }
  
-// Driver code
 int main()
 {
     int decimal_number = 10;

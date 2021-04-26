@@ -1,60 +1,25 @@
-#include<stdio.h>
-struct Array
+#include <stdio.h>
+int binarySearch(int arr[], int l, int r, int x)
 {
- int A[10];
- int size;
- int length;
-};
- void Display(struct Array arr)
- {
- int i;
- printf("\nElements are\n");
- for(i=0;i<arr.length;i++)
- printf("%d ",arr.A[i]);
- }
-void swap(int *x,int *y)
- {
- int temp=*x;
- *x=*y;
- *y=temp;
- }
-int BinarySearch(struct Array arr,int key)
-{
- int l,mid,h;
- l=0;
- h=arr.length-1;
- while(l<=h)
- {
- mid=(l+h)/2;
- if(key==arr.A[mid])
- return mid;
- else if(key<arr.A[mid])
- h=mid-1;
- else
- l=mid+1;
- }
-return -1;
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid - 1, x);
+        return binarySearch(arr, mid + 1, r, x);
+    }
+    return -1;
 }
-int RBinSearch(int a[],int l,int h,int key)
+ 
+int main(void)
 {
-
- int mid=0;
- if(l<=h)
- {
- mid=(l+h)/2;
- if(key==a[mid])
- return mid;
- else if(key<a[mid])
- return RBinSearch(a,l,mid-1,key);
- }
- else
- return RBinSearch(a,mid+1,h,key);
-return -1;
-}
-int main()
-{
- struct Array arr1={{2,3,9,16,18,21,28,32,35},10,9};
- printf("%d",BinarySearch(arr1,16));
- Display(arr1);
- return 0;
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 10;
+    int result = binarySearch(arr, 0, n - 1, x);
+    (result == -1) ? printf("Element is not present in array")
+                   : printf("Element is present at index %d",
+                            result);
+    return 0;
 }

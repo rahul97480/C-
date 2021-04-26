@@ -1,4 +1,4 @@
- #include<stdio.h>    
+#include<stdio.h>    
 void printFibonacci(int n){    
     static int n1=0,n2=1,n3;    
     if(n>0){    

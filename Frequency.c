@@ -13,7 +13,6 @@ int main()
          x = string[c] - 'a';
          count[x]++;
       }
-
       c++;
    }
 
