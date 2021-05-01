@@ -1,5 +1,3 @@
-// Radix Sort in C Programming
-
 #include <stdio.h>
 
 int getMax(int arr[], int n) {
@@ -11,31 +9,21 @@ int getMax(int arr[], int n) {
 }
 
 void countingSort(int arr[], int n, int pos) {
-  int output[n + 1];
-  int max = (arr[0] / pos) % 10;
-
-  for (int i = 1; i < n; i++) {
-    if (((arr[i] / pos) % 10) > max)
-      max = arr[i];
-  }
-  int count[max + 1];
-
-  for (int i = 0; i < max; ++i)
-    count[i] = 0;
-
-  for (int i = 0; i < n; i++)
-    count[(arr[i] / pos) % 10]++;
-    
-  for (int i = 1; i < 10; i++)
-    count[i] += count[i - 1];
-
-  for (int i = n - 1; i >= 0; i--) {
-    output[count[(arr[i] / pos) % 10] - 1] = arr[i];
-    count[(arr[i] / pos) % 10]--;
-  }
-
-  for (int i = 0; i < n; i++)
-    arr[i] = output[i];
+  int i;
+  int b[n];
+int count[10]={0};
+for(i=0;i<n;i++){            
+  ++count[(arr[i]/pos)%10];     //finding the index and incrementing the count
+}
+for(i=1;i<=9;i++){
+  count[i] += count[i-1];       //like count sort 
+}
+for(i=n-1;i>=0;i--){
+  b[--count[(arr[i]/pos)%10]]=arr[i];     //in array b decrement the count in count array and paste the value in the value from original array arr[i]
+}
+for(i=0;i<n;i++){
+  arr[i]=b[i];
+}
 }
 
 void radixsort(int arr[], int n) {

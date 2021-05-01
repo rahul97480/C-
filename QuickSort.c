@@ -40,7 +40,7 @@ void quickSort(int arr[], int lb, int ub) {
 // Function to print eklements of an array
 void printArray(int arr[], int n) {
   for (int i = 0; i < n; ++i) {
-  printf("%d  ", arr[i]);
+  printf("%d ", arr[i]);
   }
   printf("\n");
 }
@@ -49,6 +49,5 @@ int main() {
   int arr[] = {8, 7, 2, 1, 0, 9, 6};
   int n = sizeof(arr) / sizeof(arr[0]);
   quickSort(arr, 0, n - 1);
-  printf("Sorted array in ascending order: \n");
   printArray(arr, n);
 }

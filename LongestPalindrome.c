@@ -38,7 +38,7 @@ void LongestPalindrome(char *s){
     PrintString(s, start, start+end-1);
 }
 int main(){
-    char s[10] = "abab";
+    char s[10] = "ababa";
     LongestPalindrome(s);
 
     return 0;

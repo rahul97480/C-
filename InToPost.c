@@ -68,7 +68,7 @@ int isBalanced(char *exp)
  else
  return 0;
 }
-int pre(char x)
+int pre(char x) // checking Precendence of operators and L->R(Associativity )
 {
  if(x=='+' || x=='-')
  return 1;

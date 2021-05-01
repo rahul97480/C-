@@ -3,7 +3,7 @@
 int main()
 {
     int i, j;
-    for(i=0;i<=5;i++) // change here to make a reverse pattern
+    for(i=1;i<=5;i++) // change here to make a reverse pattern
     {
         for(j=1;j<=i;j++)
         {
@@ -14,3 +14,10 @@ int main()
 
     return 0;
 }
+/*
+1 
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+*/

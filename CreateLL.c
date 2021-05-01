@@ -107,14 +107,14 @@ int Display(struct Node *p){
 
 int main(){
     struct Node temp;
-    int A[]={3,5,7,10,25,8,32,2};
+    int A[]={3,5,7,10,25,8,32};
     create(A,8);
-    //Display(first);
+    Display(first);
     Insert(first,4,50000);
     //debug(first);
     //printf("After Insertion");
-    //Display(first);
-    Delete(first,3);
     Display(first);
+    //Delete(first,3);
+    //Display(first);
     //printf("%d",getCount(first));
 }

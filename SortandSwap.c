@@ -13,6 +13,8 @@ int main()
         if(a[i]%2==1)
          c++;
     }
+
+    //Bubble Sort algorithm
     for(i=0; i<n-1; i++)
     {
            

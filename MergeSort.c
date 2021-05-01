@@ -3,6 +3,7 @@ void mergeSort(int arr[], int lb, int mid, int ub){
     int i = lb;
     int j = mid+1;
     int k = lb;
+    printf("the value of  is %d \n",k);
     int b[100] = {0};
     while(i<=mid && j<= ub){
         if(arr[i] <= arr[j]){
@@ -18,19 +19,17 @@ void mergeSort(int arr[], int lb, int mid, int ub){
         while(j<=ub){
             b[k] = arr[j];
             j++;
-            k++;
         }
     }else{
         while(i<= mid){
             b[k] = arr[i];
             i++;
-            k++;
         }
+        k++;
     }
     for(k=lb;k<=ub;k++){
         arr[k] = b[k];
     }
-
 }
 
 void mergeMid(int arr[], int lb, int ub){
